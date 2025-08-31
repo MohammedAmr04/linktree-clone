@@ -48,7 +48,7 @@ const SwiperImgs = () => {
                 {/* Front */}
                 <div className="absolute inset-0 backface-hidden">
                   <Image
-                    src={card.img}
+                    src={`/trustedby${card.img}`}
                     alt="card"
                     fill
                     className="object-cover rounded-[24px]"
