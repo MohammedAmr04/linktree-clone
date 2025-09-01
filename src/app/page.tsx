@@ -1,10 +1,13 @@
-import Analytics from "@/components/landingPage/analytics/Analytics";
-import { Button } from "@/components/ui/button";
+import Analytics from '@/components/landingPage/analyticsSection/Analytics';
+import Header from '@/components/landingPage/header/Header';
+import TrustedBy from '@/components/landingPage/trustedBySection/TrustedBy';
 
 export default function Home() {
   return (
-    <div className="w-full">
+    <div className="">
+      <Header />
       <Analytics />
+      <TrustedBy />
     </div>
   );
 }
