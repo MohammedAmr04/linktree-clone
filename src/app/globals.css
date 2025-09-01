@@ -123,3 +123,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+.h2 {
+  line-height: 106%;
+  font-size: 4.8vw;
+  font-weight: 700;
+}
