@@ -1,9 +1,12 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --color-button-1: #eff0ec;
+  --color-button-2: #1e2330;
+  --font-linksans: 'LinkSans', sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -43,7 +46,13 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 }
-
+@font-face {
+  font-family: 'LinkSans';
+  src: url('/fonts/linksansVF/linik-sans.vf-regular.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -77,7 +86,7 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
-  --text: "#1e2330"
+  --text: '#1e2330';
 }
 
 .dark {
