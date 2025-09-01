@@ -25,7 +25,7 @@ const Analytics = () => {
               them coming back.
             </p>
           </div>
-          <CustomButton className="text-black font-medium px-16 py-8 text-lg rounded-full bg-[#E9C0E9] hover:bg-[#de9fde] w-max cursor-pointer">
+          <CustomButton className="w-max bg-[#E9C0E9] hover:bg-[#de9fde]">
             Get started for free
           </CustomButton>
         </div>
