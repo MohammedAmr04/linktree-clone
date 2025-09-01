@@ -1,10 +1,49 @@
+'use client';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import NavigationLink from './NavigationLink';
 import { Button } from '@/components/ui/button';
 
 function Header() {
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+
+      timeoutRef.current = setTimeout(() => {
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY < 10) {
+          setIsVisible(true);
+        } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+          setIsVisible(false);
+        } else if (currentScrollY < lastScrollY) {
+          setIsVisible(true);
+        }
+
+        setLastScrollY(currentScrollY);
+      }, 10);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, [lastScrollY]);
+
   return (
-    <div className="fixed top-12 start-43 flex mx-auto w-[82%] items-center z-10 rounded-full bg-white ps-13.5 font-linksans">
+    <div
+      className={`fixed top-12 start-43 flex mx-auto w-[82%] items-center z-10 rounded-full bg-white ps-13.5 font-linksans transition-transform duration-700 ease-in-out ${
+        isVisible ? 'translate-y-0' : '-translate-y-150'
+      }`}>
       <Image
         className="cursor-pointer"
         width={118}
