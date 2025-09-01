@@ -4,7 +4,7 @@ import Image from 'next/image';
 import NavigationLink from './NavigationLink';
 import { Button } from '@/components/ui/button';
 
-function Header() {
+function Header({ isBannerVisible }: { isBannerVisible: boolean }) {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -41,7 +41,9 @@ function Header() {
 
   return (
     <div
-      className={`fixed top-12 start-43 flex mx-auto w-[82%] items-center z-10 rounded-full bg-white ps-13.5 font-linksans transition-transform duration-700 ease-in-out ${
+      className={`fixed ${
+        isBannerVisible ? 'top-28' : 'top-12'
+      } start-43 flex mx-auto w-[82%] items-center z-10 rounded-full bg-white ps-13.5 font-linksans transition-transform duration-700 ease-in-out ${
         isVisible ? 'translate-y-0' : '-translate-y-150'
       }`}>
       <Image
