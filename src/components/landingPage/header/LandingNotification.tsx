@@ -13,7 +13,6 @@ function LandingNotification({
     if (window.scrollY > 250) {
       setisBannerVisible(false);
     }
-    شسيشسي;
   });
 
   return (
