@@ -44,7 +44,14 @@ const PlansSection = () => {
               <li
                 key={item.id}
                 className="bg-white rounded-full py-6 flex max-w-[290px] w-[290px] px-18 items-center justify-center">
-                <Image key={item.id} src={item.title} alt={item.title} width={150} height={30} />{' '}
+                <Image
+                  key={item.id}
+                  src={item.title}
+                  alt={item.title}
+                  width={150}
+                  height={0}
+                  style={{ height: 'auto' }}
+                />{' '}
               </li>
             ))}
           </ul>
