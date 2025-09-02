@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const footerLinks = [
@@ -77,13 +78,13 @@ const FooterComponent = () => {
       <footer className="z-10 w-[90vw] bg-white mx-auto rounded-2xl px-[5vw] py-[10vw] lg:p-16 relative">
         <div className="flex flex-col gap-6 lg:gap-0 lg:flex-row mb-12">
           {footerLinks.map((fL, i) => (
-            <div className="flex-1/4" key={i}>
+            <div key={fL.title} className="flex-1/4">
               <p className="text-[5vw] lg:text-[1.72vw] font-medium mb-4 lg:mb-6">{fL.title}</p>
               <div className="space-y-2 lg:space-y-4">
-                {fL.subLinks.map((sL, i) => (
-                  <a href="#" className="text-[#676b5f] text-[4vw] lg:text-[.928vw] block" key={i}>
+                {fL.subLinks.map((sL) => (
+                  <Link href="#" key={sL} className="text-[#676b5f] text-[.928vw] block">
                     {sL}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
