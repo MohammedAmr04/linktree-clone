@@ -9,7 +9,7 @@ interface CustomButtonProps extends React.ComponentProps<typeof Button> {
 const CustomButton = ({ children, className, ...props }: CustomButtonProps) => {
   return (
     <Button
-      className={`${className} text-black font-medium px-16 py-8 text-lg rounded-full cursor-pointer`}
+      className={`text-black font-medium px-16 py-8 rounded-full cursor-pointer w-fit transition-all duration-150 text-sm ${className}`}
       {...props}>
       {children}
     </Button>

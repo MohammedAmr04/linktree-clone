@@ -35,10 +35,16 @@ const buttonVariants = cva(
         socialBtn: 'h-12 p-6',
         smallSocialBtn: 'w-12 h-12 p-0',
       },
+      shape: {
+        default: 'rounded-md',
+        pill: 'rounded-full',
+        circle: 'rounded-full',
+      },
     },
     defaultVariants: {
       variant: 'default',
       size: 'default',
+      shape: 'default',
     },
   }
 );
