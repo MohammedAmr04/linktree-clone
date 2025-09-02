@@ -6,6 +6,7 @@ import LandingHeader from '@/components/landingPage/header/LandingHeader';
 import FooterComponent from '@/components/landingPage/footerSection/FooterComponent';
 import TrustedBy from '@/components/landingPage/trustedBySection/TrustedBy';
 import HeroSection from '@/components/landingPage/heroSection/HeroSection';
+import Hero3DProfile from '@/components/landingPage/heroSection/3dProfile/hero3DProfile';
 
 export default function Home() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -20,6 +21,7 @@ export default function Home() {
         <Analytics />
         <TrustedBy />
         <FooterComponent />
+        <Hero3DProfile />
       </div>
     </div>
   );
