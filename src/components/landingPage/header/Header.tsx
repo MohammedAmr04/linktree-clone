@@ -101,9 +101,9 @@ function Header({
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth={2}
+            strokeLinecap="round"
+            strokeLinejoin="round"
             className="lucide lucide-text-align-justify-icon lucide-text-align-justify lg:hidden lg:me-7 cursor-pointer lg:ms-5 md:ms-4 ms-3 md:me-5 me-4">
             <path d="M3 5h18" />
             <path d="M3 12h18" />
