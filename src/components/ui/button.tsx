@@ -32,10 +32,17 @@ const buttonVariants = cva(
         loginRegisterButton: 'px-6 py-4',
         socialBtn: 'min-w-12 h-12 p-4',
       },
+      shape: {
+        default: "rounded-md",
+        pill: "rounded-full",
+        circle: "rounded-full",
+      }
     },
     defaultVariants: {
+
       variant: 'default',
       size: 'default',
+
     },
   }
 );
