@@ -58,27 +58,30 @@ const footerLinks = [
 const FooterComponent = () => {
   return (
     <section className="bg-[#502274] pb-8 relative">
-      <div className="relative z-10 py-[250px] flex flex-col items-center space-y-10">
-        <h2 className="text-[56px] font-bold text-[#E9C0E9] text-center ">
-          Jumpstart your corner of the<br></br>internet today
+      <div className="relative z-10 py-[50px] lg:py-[250px] flex flex-col items-center space-y-2 lg:space-y-10">
+        <h2 className="text-[8.5vw] lg:text-[56px] leading-[120%] font-bold text-[#E9C0E9] text-center max-w-[14ch] lg:max-w-[28ch]">
+          Jumpstart your corner of the internet today
         </h2>
-        <div className="w-full flex gap-2 justify-center">
-          <input
-            className="w-[15%] h-14 rounded-[.57vw] bg-white p-4"
-            placeholder="linktr.ee/"></input>
-          <Button variant="sectionBtn" size="sectionBtn" className="bg-[#CEE027]">
+        <div className="w-full flex flex-col lg:flex-row gap-2 p-8 lg:p-0 justify-center items-center">
+          <div className="relative w-full lg:w-[15%] h-14">
+            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#757575] font-medium text-[4vw] lg:text-[1.14vw]">
+              linktr.ee/
+            </span>
+            <input className="w-full h-full rounded-[.57vw] bg-white ps-21 lg:ps-22 pr-4 text-[#757575] font-medium text-[4vw] lg:text-[1.14vw]" />
+          </div>
+          <Button variant="sectionBtn" size="sectionBtn" className="bg-[#CEE027] w-max">
             Claim your Linktree
           </Button>
         </div>
       </div>
-      <footer className="w-[90vw] bg-white mx-auto rounded-2xl p-16 relative z-10">
-        <div className="flex mb-12">
-          {footerLinks.map((fL) => (
-            <div className="flex-1/4">
-              <p className="text-[1.72vw] font-medium mb-6">{fL.title}</p>
-              <div className="space-y-4">
-                {fL.subLinks.map((sL) => (
-                  <a href="#" className="text-[#676b5f] text-[.928vw] block">
+      <footer className="w-[90vw] bg-white mx-auto rounded-2xl px-[5vw] py-[10vw] lg:p-16 relative z-10">
+        <div className="flex flex-col gap-6 lg:gap-0 lg:flex-row mb-12">
+          {footerLinks.map((fL, i) => (
+            <div className="flex-1/4" key={i}>
+              <p className="text-[5vw] lg:text-[1.72vw] font-medium mb-4 lg:mb-6">{fL.title}</p>
+              <div className="space-y-2 lg:space-y-4">
+                {fL.subLinks.map((sL, i) => (
+                  <a href="#" className="text-[#676b5f] text-[4vw] lg:text-[.928vw] block" key={i}>
                     {sL}
                   </a>
                 ))}
@@ -86,8 +89,8 @@ const FooterComponent = () => {
             </div>
           ))}
         </div>
-        <div className="flex justify-between">
-          <div className="flex gap-2">
+        <div className="flex flex-col lg:flex-row justify-between space-y-4">
+          <div className="flex flex-col lg:flex-row gap-1 lg:gap-2">
             <Button variant="loginBtn" size="loginRegisterButton">
               Login
             </Button>
@@ -95,10 +98,23 @@ const FooterComponent = () => {
               Get started for free
             </Button>
           </div>
-          <div className="flex gap-2">
-            <Button variant="socialBtn" size="socialBtn">
-              <span className="text-white">...</span>
-            </Button>
+          <div className="flex flex-col lg:flex-row gap-1 lg:gap-2 space-y-2">
+            <div className="flex gap-2 ">
+              <Button variant="socialBtn" size="socialBtn">
+                <img src="/footerIcons/app-store.svg" className="w-[27vw] lg:w-[7.5vw]"></img>
+              </Button>
+              <Button variant="socialBtn" size="socialBtn">
+                <img src="/footerIcons/play-store.svg" className="w-[27vw] lg:w-[7.5vw]"></img>
+              </Button>
+            </div>
+            <div className="flex gap-2">
+              <Button variant="socialBtn" size="smallSocialBtn">
+                <img src="/footerIcons/linktree.svg"></img>
+              </Button>
+              <Button variant="socialBtn" size="smallSocialBtn">
+                <img src="/footerIcons/instagram.svg"></img>
+              </Button>
+            </div>
           </div>
         </div>
       </footer>
@@ -107,7 +123,7 @@ const FooterComponent = () => {
         alt="woman"
         width="536"
         height="829"
-        className="absolute top-4 left-18 rotate-[16.42deg]"
+        className="absolute top-36 lg:top-4 -left-10 lg:left-18 rotate-[16.42deg] w-[200px] lg:w-[540px]"
       />
     </section>
   );
