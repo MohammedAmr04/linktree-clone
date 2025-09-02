@@ -1,8 +1,10 @@
 'use client';
 import { useEffect, useLayoutEffect, useState } from 'react';
+
 import Analytics from '@/components/landingPage/analyticsSection/Analytics';
 import LandingHeader from '@/components/landingPage/header/LandingHeader';
 import TiltedPreview from '@/components/landingPage/heroSection/TiltedPreview';
+import FooterComponent from '@/components/landingPage/footerSection/FooterComponent';
 import TrustedBy from '@/components/landingPage/trustedBySection/TrustedBy';
 
 export default function Home() {
@@ -17,6 +19,7 @@ export default function Home() {
         <Analytics />
         <TrustedBy />
         <TiltedPreview />
+        <FooterComponent />
       </div>
     </div>
   );
