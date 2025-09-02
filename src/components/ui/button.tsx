@@ -33,16 +33,15 @@ const buttonVariants = cva(
         socialBtn: 'min-w-12 h-12 p-4',
       },
       shape: {
-        default: "rounded-md",
-        pill: "rounded-full",
-        circle: "rounded-full",
-      }
+        default: 'rounded-md',
+        pill: 'rounded-full',
+        circle: 'rounded-full',
+      },
     },
     defaultVariants: {
-
       variant: 'default',
       size: 'default',
-
+      shape: 'default',
     },
   }
 );

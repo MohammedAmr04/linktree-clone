@@ -1,11 +1,11 @@
 'use client';
-import { useEffect, useLayoutEffect, useState } from 'react';
+import { useState } from 'react';
 
 import Analytics from '@/components/landingPage/analyticsSection/Analytics';
 import LandingHeader from '@/components/landingPage/header/LandingHeader';
-import TiltedPreview from '@/components/landingPage/heroSection/TiltedPreview';
 import FooterComponent from '@/components/landingPage/footerSection/FooterComponent';
 import TrustedBy from '@/components/landingPage/trustedBySection/TrustedBy';
+import HeroSection from '@/components/landingPage/heroSection/HeroSection';
 
 export default function Home() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -16,9 +16,9 @@ export default function Home() {
     <div>
       <LandingHeader isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />
       <div className={styleIfDrawerOpen}>
+        <HeroSection />
         <Analytics />
         <TrustedBy />
-        <TiltedPreview />
         <FooterComponent />
       </div>
     </div>

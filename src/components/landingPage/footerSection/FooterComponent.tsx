@@ -71,7 +71,7 @@ const FooterComponent = () => {
           </Button>
         </div>
       </div>
-      <footer className="w-[90vw] bg-white mx-auto rounded-2xl p-16 relative z-10">
+      <footer className="w-[90vw] bg-white mx-auto rounded-2xl p-16 relative z-9">
         <div className="flex mb-12">
           {footerLinks.map((fL) => (
             <div className="flex-1/4">
