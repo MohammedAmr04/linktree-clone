@@ -3,7 +3,13 @@ import { useState } from 'react';
 import Header from './Header';
 import LandingNotification from './LandingNotification';
 
-function LandingHeader() {
+function LandingHeader({
+  isDrawerOpen,
+  setIsDrawerOpen,
+}: {
+  isDrawerOpen: boolean;
+  setIsDrawerOpen: (isDrawerOpen: boolean) => void;
+}) {
   const [isBannerVisible, setisBannerVisible] = useState(true);
 
   return (
@@ -12,7 +18,11 @@ function LandingHeader() {
         isBannerVisible={isBannerVisible}
         setisBannerVisible={setisBannerVisible}
       />
-      <Header isBannerVisible={isBannerVisible} />
+      <Header
+        isDrawerOpen={isDrawerOpen}
+        setIsDrawerOpen={setIsDrawerOpen}
+        isBannerVisible={isBannerVisible}
+      />
     </div>
   );
 }
