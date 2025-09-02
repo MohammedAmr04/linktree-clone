@@ -57,8 +57,8 @@ const footerLinks = [
 
 const FooterComponent = () => {
   return (
-    <section className="bg-[#502274] pb-8 relative">
-      <div className="relative z-10 py-[50px] lg:py-[250px] flex flex-col items-center space-y-2 lg:space-y-10">
+    <section className="bg-[#502274] pb-4 lg:pb-8 relative overflow-hidden">
+      <div className="z-10 relative py-[50px] lg:py-[250px] flex flex-col items-center space-y-2 lg:space-y-10">
         <h2 className="text-[8.5vw] lg:text-[56px] leading-[120%] font-bold text-[#E9C0E9] text-center max-w-[14ch] lg:max-w-[28ch]">
           Jumpstart your corner of the internet today
         </h2>
@@ -74,7 +74,7 @@ const FooterComponent = () => {
           </Button>
         </div>
       </div>
-      <footer className="w-[90vw] bg-white mx-auto rounded-2xl px-[5vw] py-[10vw] lg:p-16 relative z-10">
+      <footer className="z-10 w-[90vw] bg-white mx-auto rounded-2xl px-[5vw] py-[10vw] lg:p-16 relative">
         <div className="flex flex-col gap-6 lg:gap-0 lg:flex-row mb-12">
           {footerLinks.map((fL, i) => (
             <div className="flex-1/4" key={i}>
@@ -101,29 +101,39 @@ const FooterComponent = () => {
           <div className="flex flex-col lg:flex-row gap-1 lg:gap-2 space-y-2">
             <div className="flex gap-2 ">
               <Button variant="socialBtn" size="socialBtn">
-                <img src="/footerIcons/app-store.svg" className="w-[27vw] lg:w-[7.5vw]"></img>
+                <img src="/footer/app-store.svg" className="w-[27vw] lg:w-[7.5vw]"></img>
               </Button>
               <Button variant="socialBtn" size="socialBtn">
-                <img src="/footerIcons/play-store.svg" className="w-[27vw] lg:w-[7.5vw]"></img>
+                <img src="/footer/play-store.svg" className="w-[27vw] lg:w-[7.5vw]"></img>
               </Button>
             </div>
             <div className="flex gap-2">
               <Button variant="socialBtn" size="smallSocialBtn">
-                <img src="/footerIcons/linktree.svg"></img>
+                <img src="/footer/linktree.svg"></img>
               </Button>
               <Button variant="socialBtn" size="smallSocialBtn">
-                <img src="/footerIcons/instagram.svg"></img>
+                <img src="/footer/instagram.svg"></img>
               </Button>
             </div>
           </div>
         </div>
       </footer>
+      <p className="text-center text-[#e9c0e9] mt-4 lg:mt-8 text-[4vw] lg:text-[1.14vw]">
+        &copy; Linktree {new Date().getFullYear()}
+      </p>
       <Image
-        src="/woman.svg"
-        alt="woman"
+        src="/footer/woman.svg"
+        alt="Woman SVG"
         width="536"
         height="829"
         className="absolute top-36 lg:top-4 -left-10 lg:left-18 rotate-[16.42deg] w-[200px] lg:w-[540px]"
+      />
+      <Image
+        src="/footer/flower.svg"
+        alt="Flower SVG"
+        width="536"
+        height="829"
+        className="absolute top-60 lg:bottom-64 -right-14 lg:-right-40 w-[200px] lg:w-[540px]"
       />
     </section>
   );
