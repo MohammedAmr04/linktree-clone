@@ -17,12 +17,10 @@ const buttonVariants = cva(
         secondary: 'bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80',
         ghost: 'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50',
         link: 'text-primary underline-offset-4 hover:underline',
-        sectionBtn:
-          'text-black font-medium text-lg rounded-full cursor-pointer font-medium lg:font-normal',
-        loginBtn:
-          'text-primary rounded-md cursor-pointer bg-[#eff0ec] text-[4vw] lg:text-[1.14vw] font-medium lg:font-normal',
+        sectionBtn: 'text-black font-medium text-lg rounded-full cursor-pointer font-normal',
+        loginBtn: 'text-primary rounded-md cursor-pointer bg-[#eff0ec] text-[1.14vw] font-normal',
         registerBtn:
-          'text-primary rounded-full cursor-pointer bg-[#CEE027] text-[4vw] lg:text-[1.14vw] font-medium lg:font-normal',
+          'text-primary rounded-full cursor-pointer bg-[#CEE027] text-[1.14vw] font-normal',
         socialBtn: 'bg-primary rounded-full cursor-pointer hover:bg-primary/90',
       },
       size: {
@@ -31,9 +29,8 @@ const buttonVariants = cva(
         lg: 'h-10 rounded-md px-6 has-[>svg]:px-4',
         icon: 'size-9',
         sectionBtn: 'px-8 py-4',
-        loginRegisterButton: 'px-6 py-4 w-max',
-        socialBtn: 'h-12 p-6',
-        smallSocialBtn: 'w-12 h-12 p-0',
+        loginRegisterButton: 'px-6 py-4',
+        socialBtn: 'min-w-12 h-12 p-4',
       },
     },
     defaultVariants: {
