@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button';
 import CustomButton from '@/components/ui/custom/CustomButton';
 import Image from 'next/image';
 import React from 'react';
@@ -5,7 +6,7 @@ import React from 'react';
 const Analytics = () => {
   return (
     <div className="w-full bg-[#E8EFD6]">
-      <div className="w-[90%] mx-auto py-[9.14vw] grid grid-cols-1 md:grid-cols-2 gap-4 ">
+      <div className="w-[90%] mx-auto py-[9.14vw] grid grid-cols-1 md:grid-cols-2 md:gap-20">
         <div>
           <Image src="/analytics.avif" width={1392} height={1408} alt="Analytics"></Image>
         </div>
@@ -17,9 +18,12 @@ const Analytics = () => {
               audience. Make informed updates on the fly to keep them coming back.
             </p>
           </div>
-          <CustomButton className="w-max rounded-full bg-[#E9C0E9] hover:bg-[#de9fde]">
+          <Button
+            variant="sectionBtn"
+            size="sectionBtn"
+            className="w-max rounded-full bg-[#E9C0E9] hover:bg-[#de9fde]">
             Get started for free
-          </CustomButton>
+          </Button>
         </div>
       </div>
     </div>
