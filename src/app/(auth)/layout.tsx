@@ -1,5 +1,8 @@
 import { headers } from 'next/headers';
 import Link from 'next/link';
+import { Inter } from 'next/font/google';
+
+const inter = Inter({ subsets: ['latin'], display: 'swap' });
 
 function getLastPart(url: string) {
   const parts = url.split('/');
@@ -13,8 +16,8 @@ export default async function AuthLayout({ children }: { children: React.ReactNo
   const imageSrc = getLastPart(fullUrl) == 'login' ? '/auth/login.webp' : '/auth/register.webp';
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 overflow-hidden h-screen">
-      <div className="hidden lg:block h-[24px] lg:h-[32px] w-[127px] absolute top-6 left-6 lg:top-10 lg:left-10 z-50">
+    <div className={`${inter.className} grid grid-cols-1 lg:grid-cols-2 min-h-screen`}>
+      <div className="w-[76px] lg:w-[114px] absolute top-6 left-6 lg:top-12 lg:left-12 z-50">
         <Link
           href="/"
           aria-label="Linktree home"
@@ -36,7 +39,7 @@ export default async function AuthLayout({ children }: { children: React.ReactNo
           </svg>
         </Link>
       </div>
-      <div className="overflow-y-auto">{children}</div>
+      <div>{children}</div>
       <div
         style={{ backgroundImage: `url(${imageSrc})` }}
         className={`hidden relative lg:block lg:h-full  bg-center bg-cover bg-no-repeat`}></div>
