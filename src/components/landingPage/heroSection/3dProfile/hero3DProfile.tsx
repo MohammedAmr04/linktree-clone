@@ -40,8 +40,8 @@ const Hero3DProfile = () => {
       const normalizedY = Math.max(-1, Math.min(1, deltaY / (rect.height / 2)));
 
       setMousePosition({
-        x: normalizedX * 13,
-        y: normalizedY * 13,
+        x: normalizedX * 25,
+        y: normalizedY * 32,
       });
     };
 
@@ -62,7 +62,7 @@ const Hero3DProfile = () => {
     <div className="flex justify-center items-center min-h-[700px] p-8">
       <div
         ref={cardRef}
-        className="relative transition-transform duration-300 ease-out"
+        className="relative transition-transform duration-1200 ease-out"
         style={{
           width: '330px',
           height: '630px',
@@ -128,30 +128,30 @@ const Hero3DProfile = () => {
         {/* BACKGROUND ITEM (Record/Vinyl) - Behind the card on top-right */}
         {/* SIZE: Change w-28 h-28 to adjust size | POSITION: Change -top-6 -right-8 to adjust position */}
         <div
-          className="absolute top-10 -right-20"
+          className="absolute top-10 -right-40"
           style={{
-            transform: 'translateZ(-30px)', // Behind the main card
+            transform: 'translateZ(-80px)', // Behind the main card
             transformStyle: 'preserve-3d',
           }}>
           <img
             src={profile.backgroundItem}
             alt=""
-            className="w-40 h-40 object-cover rounded-full shadow-xl"
+            className="w-65 h-65 object-cover rounded-full shadow-xl"
           />
         </div>
 
         {/* WIDGET - Outside card on bottom-left */}
         {/* SIZE: Change w-28 h-28 to adjust size | POSITION: Change -bottom-6 -left-8 to adjust position */}
         <div
-          className="absolute bottom-12 -left-15"
+          className="absolute bottom-14 -left-30"
           style={{
-            transform: 'translateZ(50px)',
+            transform: 'translateZ(80px)',
             transformStyle: 'preserve-3d',
           }}>
           <img
             src={profile.widget}
             alt="widget"
-            className="w-40 h-40 object-cover rounded-xl shadow-xl"
+            className="w-65 h-65 object-cover rounded-xl shadow-xl"
           />
         </div>
 
