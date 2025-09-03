@@ -7,7 +7,8 @@ import FooterComponent from '@/components/landingPage/footerSection/FooterCompon
 import TrustedBy from '@/components/landingPage/trustedBySection/TrustedBy';
 import HeroSection from '@/components/landingPage/heroSection/HeroSection';
 import Hero3DProfile from '@/components/landingPage/heroSection/3dProfile/hero3DProfile';
-
+import { ShareSection } from '@/components/landingPage';
+import PlansSection from '@/components/landingPage/plansSection/PlansSection';
 export default function Home() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -20,6 +21,8 @@ export default function Home() {
         <HeroSection />
         <Analytics />
         <TrustedBy />
+        <PlansSection />
+        <ShareSection />
         <FooterComponent />
         <Hero3DProfile />
       </div>
