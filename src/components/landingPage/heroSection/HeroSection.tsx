@@ -3,12 +3,13 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useState } from 'react';
+import Hero3DProfile from './3dProfile/hero3DProfile';
 function HeroSection() {
   const [defaultValue, setDefaultValue] = useState('linktr.ee/');
   return (
-    <section className="bg-[#254f1a] min-h-screen flex items-center justify-center py-[10vw] md:py-0">
-      <div className="w-[80vw] mx-auto">
-        <div className="lg:w-[55.7143vw] lg:max-w-[718px]">
+    <section className="bg-[#254f1a] min-h-screen flex items-center justify-center py-[10vw] md:py-0 ">
+      <div className="w-[80vw] mx-auto grid md:grid-cols-2 mt-65">
+        <div className="lg:w-[55.7143vw] lg:max-w-[718px] col-span-1">
           <h1 className="text-[2.5rem] md:text-[3rem] lg:text-[5rem] font-extrabold font-linksans text-[#d2e823] leading-[1.1] mb-6">
             Everything you are. In one, simple link in bio.
           </h1>
@@ -38,6 +39,9 @@ function HeroSection() {
             </Button>
           </div>
         </div>
+        {/* <div className="col-span-1 relative">
+          <Hero3DProfile />
+        </div> */}
       </div>
     </section>
   );

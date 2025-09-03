@@ -36,11 +36,9 @@ const Hero3DProfile = () => {
       const deltaX = e.clientX - centerX;
       const deltaY = e.clientY - centerY;
 
-      // Simple approach: normalize based on card dimensions
       const normalizedX = Math.max(-1, Math.min(1, deltaX / (rect.width / 2)));
       const normalizedY = Math.max(-1, Math.min(1, deltaY / (rect.height / 2)));
 
-      // TILT DEGREE: Very subtle tilt - change 1.2 to adjust sensitivity (1.2 = 1.2 degrees max)
       setMousePosition({
         x: normalizedX * 13,
         y: normalizedY * 13,
