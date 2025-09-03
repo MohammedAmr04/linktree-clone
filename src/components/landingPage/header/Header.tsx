@@ -53,7 +53,7 @@ function Header({
       <div
         className={`fixed ${
           isBannerVisible ? 'lg:top-28 top-24' : 'lg:top-12 top-6'
-        } flex mx-auto md:w-[82%] w-[90%] items-center z-10 rounded-full bg-white 2xl:ps-13.5 ps-6 font-linksans transition-transform duration-700 ease-in-out ${
+        } flex mx-auto lg:w-[82%] w-[90%] items-center z-10 rounded-full bg-white 2xl:ps-13.5 ps-6 font-linksans transition-transform duration-700 ease-in-out ${
           isVisible ? 'translate-y-0' : '-translate-y-150'
         }`}>
         <div className="2xl:ms-0 ms-2 hidden sm:block">

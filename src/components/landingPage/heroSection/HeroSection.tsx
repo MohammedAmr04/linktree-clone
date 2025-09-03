@@ -8,7 +8,7 @@ function HeroSection() {
   const [defaultValue, setDefaultValue] = useState('linktr.ee/');
   return (
     <section className="bg-[#254f1a] min-h-screen flex items-center justify-center md:py-0">
-      <div className="w-[80vw] mx-auto grid md:grid-cols-2">
+      <div className="lg:w-[80vw] w-[90vw] mx-auto grid md:grid-cols-2">
         <div className="lg:w-[55.7143vw] lg:max-w-[718px] col-span-1 mt-35">
           <h1 className="text-[2.5rem] md:text-[3rem] lg:text-[5rem] font-extrabold font-linksans text-[#d2e823] leading-[1.1] mb-6">
             Everything you are. In one, simple link in bio.
