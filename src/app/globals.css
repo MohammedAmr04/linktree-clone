@@ -133,6 +133,10 @@
   }
 }
 
+body {
+  font-family: 'LinkSans';
+}
+
 .h2 {
   line-height: 106%;
   font-size: 4.8vw;
