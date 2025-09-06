@@ -26,6 +26,8 @@
   --color-chart-1: var(--chart-1);
   --color-ring: var(--ring);
   --color-input: var(--input);
+  --color-auth-input: var(--auth-input);
+  --color-auth-link: var(--auth-link);
   --color-border: var(--border);
   --color-destructive: var(--destructive);
   --color-accent-foreground: var(--accent-foreground);
@@ -86,7 +88,9 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
-  --text: '#1e2330';
+  --text: #1e2330;
+  --auth-input: #f6f7f5;
+  --auth-link: #8129d9;
 }
 
 .dark {

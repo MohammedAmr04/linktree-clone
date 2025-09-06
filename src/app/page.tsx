@@ -8,6 +8,7 @@ import TrustedBy from '@/components/landingPage/trustedBySection/TrustedBy';
 import HeroSection from '@/components/landingPage/heroSection/HeroSection';
 import { ShareSection } from '@/components/landingPage';
 import PlansSection from '@/components/landingPage/plansSection/PlansSection';
+import { Metadata } from 'next';
 
 export default function Home() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -15,7 +16,7 @@ export default function Home() {
   const styleIfDrawerOpen = isDrawerOpen ? 'hidden' : 'block';
 
   return (
-    <div>
+    <div className="font-['LinkSans']">
       <LandingHeader isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />
       <div className={styleIfDrawerOpen}>
         <HeroSection />

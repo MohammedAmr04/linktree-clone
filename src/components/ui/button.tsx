@@ -24,6 +24,7 @@ const buttonVariants = cva(
         registerBtn:
           'text-primary rounded-full cursor-pointer bg-[#CEE027] text-[4vw] lg:text-[1.14vw] font-medium lg:font-normal',
         socialBtn: 'bg-primary rounded-full cursor-pointer hover:bg-primary/90',
+        authBtn: 'bg-primary ! text-background',
       },
       size: {
         default: 'h-9 px-4 py-2 has-[>svg]:px-3',
@@ -31,14 +32,13 @@ const buttonVariants = cva(
         lg: 'h-10 rounded-md px-6 has-[>svg]:px-4',
         icon: 'size-9',
         sectionBtn: 'px-8 py-4',
-        loginRegisterButton: 'px-6 py-4 w-max',
-        socialBtn: 'h-12 p-6',
-        smallSocialBtn: 'w-12 h-12 p-0',
+        loginRegisterButton: 'px-6 py-4',
+        socialBtn: 'min-w-12 h-12 p-4',
+        authBtn: 'w-full py-3',
       },
       shape: {
         default: 'rounded-md',
         pill: 'rounded-full',
-        circle: 'rounded-full',
       },
     },
     defaultVariants: {
@@ -53,6 +53,7 @@ function Button({
   className,
   variant,
   size,
+  shape,
   asChild = false,
   ...props
 }: React.ComponentProps<'button'> &
@@ -64,7 +65,7 @@ function Button({
   return (
     <Comp
       data-slot="button"
-      className={cn(buttonVariants({ variant, size, className }))}
+      className={cn(buttonVariants({ variant, size, shape, className }))}
       {...props}
     />
   );
