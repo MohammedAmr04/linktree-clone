@@ -17,10 +17,12 @@ const buttonVariants = cva(
         secondary: 'bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80',
         ghost: 'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50',
         link: 'text-primary underline-offset-4 hover:underline',
-        sectionBtn: 'text-black font-medium text-lg rounded-full cursor-pointer font-normal',
-        loginBtn: 'text-primary rounded-md cursor-pointer bg-[#eff0ec] text-[1.14vw] font-normal',
+        sectionBtn:
+          'text-black font-medium text-lg rounded-full cursor-pointer font-medium lg:font-normal',
+        loginBtn:
+          'text-primary rounded-md cursor-pointer bg-[#eff0ec] text-[4vw] lg:text-[1.14vw] font-medium lg:font-normal',
         registerBtn:
-          'text-primary rounded-full cursor-pointer bg-[#CEE027] text-[1.14vw] font-normal',
+          'text-primary rounded-full cursor-pointer bg-[#CEE027] text-[4vw] lg:text-[1.14vw] font-medium lg:font-normal',
         socialBtn: 'bg-primary rounded-full cursor-pointer hover:bg-primary/90',
         authBtn: 'bg-primary ! text-background',
       },
