@@ -147,3 +147,8 @@ body {
   font-size: 56px;
   font-weight: 700;
 }
+
+/* 3D Profile Slider Styles */
+.perspective-1000 {
+  perspective: 1000px;
+}
