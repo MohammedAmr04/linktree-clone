@@ -1,17 +1,6 @@
-import { headers } from 'next/headers';
 import Link from 'next/link';
 
-function getLastPart(url: string) {
-  const parts = url.split('/');
-  return parts.filter(Boolean).pop();
-}
-
 export default async function AuthLayout({ children }: { children: React.ReactNode }) {
-  const headersList = await headers();
-  const fullUrl = headersList.get('x-url') || headersList.get('referer') || '';
-  console.log(getLastPart(fullUrl));
-  const imageSrc = getLastPart(fullUrl) == 'login' ? '/auth/login.webp' : '/auth/register.webp';
-
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 overflow-hidden h-screen">
       <div className="hidden lg:block h-[24px] lg:h-[32px] w-[127px] absolute top-6 left-6 lg:top-10 lg:left-10 z-50">
@@ -38,7 +27,7 @@ export default async function AuthLayout({ children }: { children: React.ReactNo
       </div>
       <div className="overflow-y-auto">{children}</div>
       <div
-        style={{ backgroundImage: `url(${imageSrc})` }}
+        style={{ backgroundImage: `url(/auth/login.webp)` }}
         className={`hidden relative lg:block lg:h-full  bg-center bg-cover bg-no-repeat`}></div>
     </div>
   );
