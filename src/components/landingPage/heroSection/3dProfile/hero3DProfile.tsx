@@ -1,8 +1,5 @@
-'use client';
-
 import { useState, useEffect, useRef } from 'react';
 
-// Profile data - using the music artist profile as the main one
 const profile = {
   avatar:
     'https://cdn.prod.website-files.com/666255f7f2126f4e8cec6f8f/66918ab0cb2cafecf967e408_avatar.webp',
@@ -23,9 +20,16 @@ const profile = {
 
 const Hero3DProfile = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [windowDimensions, setWindowDimensions] = useState({ width: 1024, height: 768 });
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Set initial window dimensions
+    setWindowDimensions({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    });
+
     const handleMouseMove = (e: MouseEvent) => {
       if (!cardRef.current) return;
 
@@ -49,12 +53,21 @@ const Hero3DProfile = () => {
       setMousePosition({ x: 0, y: 0 });
     };
 
+    const handleResize = () => {
+      setWindowDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
     document.addEventListener('mousemove', handleMouseMove);
     document.addEventListener('mouseleave', handleMouseLeave);
+    window.addEventListener('resize', handleResize);
 
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseleave', handleMouseLeave);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -65,19 +78,19 @@ const Hero3DProfile = () => {
         className="relative transition-transform duration-1200 ease-out"
         style={{
           width:
-            window.innerWidth < 640
+            windowDimensions.width < 640
               ? '200px'
-              : window.innerWidth < 768
+              : windowDimensions.width < 768
               ? '260px'
-              : window.innerWidth < 1280
+              : windowDimensions.width < 1280
               ? '300px'
               : '330px',
           height:
-            window.innerWidth < 640
+            windowDimensions.width < 640
               ? '380px'
-              : window.innerWidth < 768
+              : windowDimensions.width < 768
               ? '490px'
-              : window.innerWidth < 1280
+              : windowDimensions.width < 1280
               ? '560px'
               : '630px',
           transform: `perspective(1000px) rotateX(${-mousePosition.y}deg) rotateY(${
@@ -139,8 +152,7 @@ const Hero3DProfile = () => {
           </div>
         </div>
 
-        {/* BACKGROUND ITEM (Record/Vinyl) - Behind the card on top-right */}
-        {/* SIZE: Change w-28 h-28 to adjust size | POSITION: Change -top-6 -right-8 to adjust position */}
+        {/* BACKGROUND ITEM */}
         <div
           className="absolute top-4 sm:top-6 md:top-8 xl:top-10 -right-16 sm:-right-20 md:-right-28 xl:-right-40"
           style={{
@@ -155,7 +167,6 @@ const Hero3DProfile = () => {
         </div>
 
         {/* WIDGET - Outside card on bottom-left */}
-        {/* SIZE: Change w-28 h-28 to adjust size | POSITION: Change -bottom-6 -left-8 to adjust position */}
         <div
           className="absolute bottom-8 sm:bottom-10 md:bottom-12 xl:bottom-14 -left-12 sm:-left-16 md:-left-20 xl:-left-30"
           style={{
@@ -170,7 +181,6 @@ const Hero3DProfile = () => {
         </div>
 
         {/* LINKS - Hovering outside card bounds in center area */}
-        {/* POSITION: Change top-40 -left-8 to adjust position */}
         <div
           className="absolute top-28 sm:top-36 md:top-44 xl:top-60 left-3 sm:left-4 md:left-6 xl:left-8 space-y-1 sm:space-y-1.5 md:space-y-2 xl:space-y-3 w-40 sm:w-48 md:w-56 xl:w-64"
           style={{
@@ -191,7 +201,6 @@ const Hero3DProfile = () => {
         </div>
 
         {/* SOCIAL ICONS - Outside card bounds on bottom-right */}
-        {/* POSITION: Change bottom-16 -right-12 to adjust position */}
         <div
           className="absolute bottom-6 sm:bottom-8 md:bottom-10 xl:bottom-16 -right-4 sm:-right-6 md:-right-8 xl:-right-12 flex space-x-1 sm:space-x-1.5 md:space-x-2 xl:space-x-3"
           style={{

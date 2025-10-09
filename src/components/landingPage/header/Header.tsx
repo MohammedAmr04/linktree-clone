@@ -3,7 +3,6 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import NavigationLink from './NavigationLink';
 import { Button } from '@/components/ui/button';
-import {} from 'lucide-react';
 import HeaderDrawer from './HeaderDrawer';
 function Header({
   isBannerVisible,
@@ -16,9 +15,13 @@ function Header({
 }) {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(1024);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
+    // Set initial window width
+    setWindowWidth(window.innerWidth);
+
     const handleScroll = () => {
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
@@ -39,9 +42,16 @@ function Header({
       }, 10);
     };
 
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleResize);
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
       }
@@ -59,8 +69,8 @@ function Header({
         <div className="2xl:ms-0 ms-2 hidden sm:block">
           <Image
             className="cursor-pointer"
-            width={window.innerWidth > 1024 ? 118 : 80}
-            height={window.innerWidth > 1024 ? 24 : 16}
+            width={windowWidth > 1024 ? 118 : 80}
+            height={windowWidth > 1024 ? 24 : 16}
             src={
               'https://cdn.prod.website-files.com/666255f7f2126f4e8cec6f8f/66634daccb34e6d65a41c76d_download.svg'
             }
